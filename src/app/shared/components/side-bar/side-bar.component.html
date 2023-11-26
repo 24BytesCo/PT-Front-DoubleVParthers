@@ -1,1 +1,26 @@
-<p>side-bar works!</p>
+<!-- Left Sidebar - style you can find in sidebar.scss  -->
+<!-- ============================================================== -->
+<aside class="left-sidebar">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar">
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+
+                <li style="cursor: pointer;" [routerLinkActive]="'active'" routerLink="" ><a>Dashboard </a></li>
+
+                <li class="nav-devider"></li>
+                <li class="nav-small-cap">Master</li>
+                        <li style="cursor: pointer;" [routerLinkActive]="'active'"  routerLink="/user" ><a>Usuarios</a>
+                        </li>
+                        <li style="cursor: pointer;" [routerLinkActive]="'active'"  routerLink="/person" >
+                            <a>Personas</a></li>
+
+            </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+</aside>
+<!-- ============================================================== -->
+<!-- End Left Sidebar - style you can find in sidebar.scss  -->
