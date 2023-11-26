@@ -1,1 +1,74 @@
-<p>user-page works!</p>
+<!-- Table -->
+<div class="card">
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-md-8">
+                <h4 class="card-title">Usuarios</h4>
+                <h6 class="card-subtitle">Usuarios registrados en BD</h6>
+            </div>
+            <div class="col-md-4 text-md-right">
+                <button id="crearUsuario"  data-toggle="modal" data-target="#crearUsuarioModal" class="btn waves-effect waves-light btn-rounded btn-success">Crear Usuario</button>
+            </div>
+
+
+
+        </div>
+        <table id="smptable" class="table">
+            <thead>
+                <tr>
+                    <th data-field="name">Nombre Usuario</th>
+                    <th data-field="stargazers_count">Fecha Creación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of data">
+                    <td>{{ item.nombreUsuario }}</td>
+                    <td>{{ item.fechaCreacion | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
+
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="crearUsuarioModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Crear Usuario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form (ngSubmit)="crearUsuario()" [formGroup]="formCrearUsuario" class="form-horizontal form-material" id="loginform" action="index.html">
+                <h3 class="box-title m-b-20">Ingrese Datos</h3>
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <input formControlName="nombreUsuario" class="form-control" type="text" required=""
+                            placeholder="Nombre Usuario">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <input formControlName="pass" class="form-control" type="password" required=""
+                            placeholder="Password">
+                    </div>
+                </div>
+
+                <div class="form-group text-center">
+                    <div class="col-xs-12 p-b-20">
+                        <button [class.cursor-prohibido]="formCrearUsuario.invalid" [disabled]="formCrearUsuario.invalid" class="btn btn-block btn-lg btn-info btn-rounded" type="submit">Crear</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+<!-- Table -->

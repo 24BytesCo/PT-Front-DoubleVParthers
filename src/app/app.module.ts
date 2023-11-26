@@ -7,6 +7,8 @@ import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './modules/home/home.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ManejoErroresInterceptor } from './core/interceptors/manejo-errores.interceptor';
+import { InyectarTokenInterceptor } from './core/interceptors/inyectar-token.interceptor';
+import { LoaderInterceptor } from './core/interceptors/loader.interceptor';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,23 @@ import { ManejoErroresInterceptor } from './core/interceptors/manejo-errores.int
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    SharedModule
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ManejoErroresInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InyectarTokenInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
       multi: true
     }
   ],

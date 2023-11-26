@@ -1,1 +1,28 @@
-<p>person-page works!</p>
+                        <!-- Table -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Personas</h4>
+                                <h6 class="card-subtitle">Personas registradas en BD</h6>
+                                <table id="smptable" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th data-field="name">Nombre Completo</th>
+                                            <th data-field="name">Identificación</th>
+                                            <th data-field="name">Email</th>
+                                            <th data-field="stargazers_count">Fecha Creación</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of data">
+                                            <td>{{ item.nombresApellidosConcat }}</td>
+                                            <td>{{ item.numeroIdentificacionConcat }}</td>
+                                            <td>{{ item.email }}</td>
+                                            <td>{{ item.fechaCreacion | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
+                                            
+                                            
+                                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- Table -->
