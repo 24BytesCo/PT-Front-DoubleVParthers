@@ -1,3 +1,18 @@
 .active {
     color: #e0e0e0; /* Cambia esto según tu estilo deseado */
   }
+
+  input.ng-invalid.ng-touched
+  {
+    border-bottom: solid 2px rgba(235, 62, 62, 0.678) !important;
+  }
+
+  input.ng-valid.ng-touched
+  {
+    border-bottom: solid 2px #398bf7 !important;
+  }
+
+  .cursor-prohibido
+  {
+    cursor: not-allowed;
+  }
