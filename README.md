@@ -1,27 +1,41 @@
-# PTFrontDoubleVParthers
+**Cliente Angular con Características Avanzadas**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
+---
 
-## Development server
+### Descripción del Cliente Angular
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Este proyecto de cliente fue desarrollado con Angular, aprovechando diversas características para garantizar una experiencia eficiente y segura. A continuación, se detallan las decisiones de diseño y las tecnologías utilizadas.
 
-## Code scaffolding
+### Características Principales
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Carga Perezosa:** Se implementó la carga perezosa de módulos para garantizar una eficiente carga de recursos. Esta técnica permite cargar módulos solo cuando son necesarios, optimizando el rendimiento de la aplicación.
 
-## Build
+- **Modularización del Código:** Se aplicó la modularización del código para mejorar la mantenibilidad y facilitar la escalabilidad del proyecto. Los diferentes componentes y funcionalidades se organizaron en módulos independientes.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Interceptor para Seguridad
 
-## Running unit tests
+- **Token de Autenticación:** Se implementó un interceptor para agregar automáticamente el token de autenticación a todas las peticiones HTTP. Esta funcionalidad garantiza la seguridad del sistema al validar la autenticidad de las solicitudes.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Interceptor para Experiencia de Usuario
 
-## Running end-to-end tests
+- **Indicador de Carga (Loader):** Un interceptor se utilizó para gestionar la visualización de un indicador de carga durante las solicitudes HTTP. Esto mejora la experiencia del usuario al proporcionar retroalimentación visual sobre el progreso de las operaciones.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Interceptor para Manejo de Errores
 
-## Further help
+- **Centralización de Errores:** Se implementó un interceptor centralizado para manejar los errores provenientes de las peticiones HTTP. Esta estrategia optimiza la detección y el tratamiento de posibles problemas en la comunicación entre el cliente y el servidor.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Tecnologías Utilizadas
+
+- **Node 20.9.0:** La versión específica de Node.js utilizada para garantizar la compatibilidad y estabilidad del entorno de desarrollo.
+
+- **Angular 14:** La versión 14 de Angular fue la elección para aprovechar las últimas características y mejoras en el framework.
+
+### Instrucciones de Ejecución
+
+Para ejecutar el cliente Angular, sigue estos pasos:
+
+1. Clona este repositorio en tu máquina local.
+2. Asegúrate de tener Node.js instalado (versión 20.9.0).
+3. Navega al directorio del cliente Angular.
+4. Ejecuta `npm install` para instalar las dependencias.
+5. Ejecuta `ng serve` para iniciar el servidor de desarrollo.
