@@ -1,28 +1,99 @@
-                        <!-- Table -->
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Personas</h4>
-                                <h6 class="card-subtitle">Personas registradas en BD</h6>
-                                <table id="smptable" class="table">
-                                    <thead>
-                                        <tr>
-                                            <th data-field="name">Nombre Completo</th>
-                                            <th data-field="name">Identificación</th>
-                                            <th data-field="name">Email</th>
-                                            <th data-field="stargazers_count">Fecha Creación</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr *ngFor="let item of data">
-                                            <td>{{ item.nombresApellidosConcat }}</td>
-                                            <td>{{ item.numeroIdentificacionConcat }}</td>
-                                            <td>{{ item.email }}</td>
-                                            <td>{{ item.fechaCreacion | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
-                                            
-                                            
-                                            </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <!-- Table -->
+<!-- Table -->
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-8">
+                <h4 class="card-title">Personas</h4>
+                <h6 class="card-subtitle">Personas registradas en BD</h6>
+            </div>
+            <div class="col-md-4 text-md-right">
+                <button id="crearUsuario" data-toggle="modal" data-target="#crearPersonaModal"
+                    class="btn waves-effect waves-light btn-rounded btn-success">Crear Persona</button>
+            </div>
+        </div>
+        <table id="smptable" class="table">
+            <thead>
+                <tr>
+                    <th data-field="name">Nombre Completo</th>
+                    <th data-field="name">Identificación</th>
+                    <th data-field="name">Email</th>
+                    <th data-field="stargazers_count">Fecha Creación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of data">
+                    <td>{{ item.nombresApellidosConcat }}</td>
+                    <td>{{ item.numeroIdentificacionConcat }}</td>
+                    <td>{{ item.email }}</td>
+                    <td>{{ item.fechaCreacion | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
+
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Table -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="crearPersonaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Crear Persona</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form (ngSubmit)="crearPersona()" [formGroup]="formCrearPersona" class="form-horizontal form-material" id="loginform" action="index.html">
+                <h3 class="box-title m-b-20">Ingrese Datos</h3>
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <input formControlName="nombres" class="form-control" type="text" required=""
+                            placeholder="Nombres">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <input formControlName="apellidos" class="form-control" type="text" required=""
+                            placeholder="Apellidos">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <input formControlName="tipoIdentificacion" class="form-control" type="text" required=""
+                            placeholder="Tipo Documento">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <input formControlName="numeroIdentificacion" class="form-control" type="text" required=""
+                            placeholder="Numero Documento">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <input formControlName="email" class="form-control" type="email" required=""
+                            placeholder="email">
+                    </div>
+                </div>
+
+                <div class="form-group text-center">
+                    <div class="col-xs-12 p-b-20">
+                        <button [class.cursor-prohibido]="formCrearPersona.invalid" [disabled]="formCrearPersona.invalid" class="btn btn-block btn-lg btn-info btn-rounded" type="submit">Crear</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
+
+
+  

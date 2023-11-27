@@ -15,5 +15,9 @@ export class PersonService {
     return this._httpClient.get(this.URL_API + "Persona/list");
   }
 
+  crearPersona(nombres:string, apellidos: string, numeroIdentificacion:string, tipoIdentificacion:string, email:string): Observable<any> {
+    return this._httpClient.post(this.URL_API + "Persona/crearPersona", { nombres, apellidos, numeroIdentificacion, tipoIdentificacion, email });
+  }
+
 
 }

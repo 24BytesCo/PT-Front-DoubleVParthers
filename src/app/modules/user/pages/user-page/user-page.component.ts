@@ -14,7 +14,7 @@ export class UserPageComponent implements OnInit {
   formCrearUsuario: FormGroup = new FormGroup({});
 
   data: any = [];
-  constructor(private _userService: UserService, private el: ElementRef, private renderer: Renderer2) { }
+  constructor(private _userService: UserService) { }
 
 
   ngOnInit(): void {
