@@ -1,5 +1,8 @@
 **Cliente Angular con Funcionalidades Avanzadas y Seguridad**
 
+Ver video funcional del proyecto Completo:
+https://www.youtube.com/watch?v=GyexNSs3rxA
+
 ---
 
 ### Descripción del Cliente Angular
